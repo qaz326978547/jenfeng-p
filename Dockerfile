@@ -23,6 +23,8 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
 # 安装 Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+RUN ls 
+
 RUN composer install
 
 # 将所有文件的拥有者设置为 www-data 用户
