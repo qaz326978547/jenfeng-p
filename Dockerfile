@@ -5,20 +5,20 @@ FROM php:8.1-fpm
 WORKDIR /var/www/html
 
 # 安装系统依赖和 PHP 扩展
-# RUN apt-get update && apt-get install -y \
-#     libfreetype6-dev \
-#     libjpeg62-turbo-dev \
-#     libpng-dev \
-#     zlib1g-dev \
-#     libzip-dev \
-#     && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libpng-dev \
+    zlib1g-dev \
+    libzip-dev \
+    && rm -rf /var/lib/apt/lists/*
 
-# # 配置并安装 PHP 扩展
-# RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
-#     && docker-php-ext-install -j$(nproc) gd \
-#         pdo \
-#         pdo_mysql \
-#         zip
+# 配置并安装 PHP 扩展
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) gd \
+        pdo \
+        pdo_mysql \
+        zip
 
 # 安装 Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
