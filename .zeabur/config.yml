@@ -1,0 +1,11 @@
+build:
+  name: php-app
+  context: .
+  dockerfile: Dockerfile
+
+deploy:
+  name: php-app
+  replicas: 1
+  ports:
+    - 9000:9000
+  entrypoint: ["php-fpm"]
