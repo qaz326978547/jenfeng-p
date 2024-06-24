@@ -7,12 +7,14 @@ RUN apt-get update && \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libpng-dev \
+        zlib1g-dev \  # 新增：安装 zlib1g-dev 作为 zip 扩展的依赖
     && rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg && \
     docker-php-ext-install -j$(nproc) gd \
         pdo \
-        pdo_mysql
+        pdo_mysql \
+        zip   # 新增：安装 zip 扩展
 
 # 安装 Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
