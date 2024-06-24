@@ -6,7 +6,7 @@ return [
 
 	'global' => [
 		'Csrf',
-		// 'HttpToHttps', // 線上的時候自動轉https
+		'HttpToHttps', // 線上的時候自動轉https
 		'Redirect301', // 301重定向
 		'NowLang', // 多語言
 		'BrowseRecord', // 瀏覽記錄
