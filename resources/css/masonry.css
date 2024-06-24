@@ -1,0 +1,37 @@
+body,
+html {
+  overflow: auto;
+  height: 100%; }
+
+.template,
+main {
+  overflow: auto;
+  height: 100%; }
+
+header,
+footer {
+  display: none; }
+
+main {
+  margin-bottom: 0 !important; }
+
+.public-fancybox {
+  width: 1200px;
+  height: 100%;
+  max-width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative; }
+
+.masonry {
+  height: 100%; }
+  .masonry .img-w,
+  .masonry .img-grid {
+    width: 33%;
+    padding: 10px; }
+  .masonry .img-w400 {
+    width: 33%; }
+  .masonry .img-w800 {
+    width: 66%; }
+  .masonry .img-w1200 {
+    width: 100%; }

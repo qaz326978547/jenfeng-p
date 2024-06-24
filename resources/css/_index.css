@@ -1,0 +1,14 @@
+#banner {
+  overflow: hidden;
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+  left: 0; }
+  #banner img {
+    margin: auto; }
+
+.px-30 {
+  padding: 0 30px; }
+
+.px-50 {
+  padding: 0 50px; }

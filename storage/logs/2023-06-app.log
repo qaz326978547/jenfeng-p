@@ -1,0 +1,66 @@
+[2023-06-16 13:49:20] production.INFO: Exception Message:
+Message: Symfony\Component\HttpFoundation\RedirectResponse::__construct(): Argument #2 ($status) must be of type int, string given, called in /home/choice21/public_html/jinfeng/app/Helpers/redirect.php on line 21
+Code: 0
+File: /home/choice21/public_html/jinfeng/vendor/symfony/http-foundation/RedirectResponse.php
+Line: 35
+  
+[2023-06-16 13:58:01] production.INFO: Exception Message:
+Message: Symfony\Component\HttpFoundation\RedirectResponse::__construct(): Argument #2 ($status) must be of type int, string given, called in /home/choice21/public_html/jinfeng/app/Helpers/redirect.php on line 21
+Code: 0
+File: /home/choice21/public_html/jinfeng/vendor/symfony/http-foundation/RedirectResponse.php
+Line: 35
+  
+[2023-06-19 14:50:59] production.INFO: Exception Message:
+Message: Symfony\Component\HttpFoundation\RedirectResponse::__construct(): Argument #2 ($status) must be of type int, string given, called in /home/choice21/public_html/jinfeng/app/Helpers/redirect.php on line 21
+Code: 0
+File: /home/choice21/public_html/jinfeng/vendor/symfony/http-foundation/RedirectResponse.php
+Line: 35
+  
+[2023-06-19 20:59:04] production.INFO: Exception Message:
+Message: Symfony\Component\HttpFoundation\RedirectResponse::__construct(): Argument #2 ($status) must be of type int, string given, called in /home/choice21/public_html/jinfeng/app/Helpers/redirect.php on line 21
+Code: 0
+File: /home/choice21/public_html/jinfeng/vendor/symfony/http-foundation/RedirectResponse.php
+Line: 35
+  
+[2023-06-19 20:59:28] production.INFO: Exception Message:
+Message: Symfony\Component\HttpFoundation\RedirectResponse::__construct(): Argument #2 ($status) must be of type int, string given, called in /home/choice21/public_html/jinfeng/app/Helpers/redirect.php on line 21
+Code: 0
+File: /home/choice21/public_html/jinfeng/vendor/symfony/http-foundation/RedirectResponse.php
+Line: 35
+  
+[2023-06-20 10:57:44] production.INFO: Exception Message:
+Message: Symfony\Component\HttpFoundation\RedirectResponse::__construct(): Argument #2 ($status) must be of type int, string given, called in /home/choice21/public_html/jinfeng/app/Helpers/redirect.php on line 21
+Code: 0
+File: /home/choice21/public_html/jinfeng/vendor/symfony/http-foundation/RedirectResponse.php
+Line: 35
+  
+[2023-06-26 00:15:42] production.INFO: Exception Message:
+Message: Symfony\Component\HttpFoundation\RedirectResponse::__construct(): Argument #2 ($status) must be of type int, string given, called in /home/choice21/public_html/jinfeng/app/Helpers/redirect.php on line 21
+Code: 0
+File: /home/choice21/public_html/jinfeng/vendor/symfony/http-foundation/RedirectResponse.php
+Line: 35
+  
+[2023-06-26 00:15:45] production.INFO: Exception Message:
+Message: Symfony\Component\HttpFoundation\RedirectResponse::__construct(): Argument #2 ($status) must be of type int, string given, called in /home/choice21/public_html/jinfeng/app/Helpers/redirect.php on line 21
+Code: 0
+File: /home/choice21/public_html/jinfeng/vendor/symfony/http-foundation/RedirectResponse.php
+Line: 35
+  
+[2023-06-29 12:11:37] production.INFO: Exception Message:
+Message: Symfony\Component\HttpFoundation\RedirectResponse::__construct(): Argument #2 ($status) must be of type int, string given, called in /home/choice21/public_html/jinfeng/app/Helpers/redirect.php on line 21
+Code: 0
+File: /home/choice21/public_html/jinfeng/vendor/symfony/http-foundation/RedirectResponse.php
+Line: 35
+  
+[2023-06-30 14:49:25] production.INFO: Exception Message:
+Message: Symfony\Component\HttpFoundation\RedirectResponse::__construct(): Argument #2 ($status) must be of type int, string given, called in /home/choice21/public_html/jinfeng/app/Helpers/redirect.php on line 21
+Code: 0
+File: /home/choice21/public_html/jinfeng/vendor/symfony/http-foundation/RedirectResponse.php
+Line: 35
+  
+[2023-06-30 19:03:01] production.INFO: Exception Message:
+Message: Symfony\Component\HttpFoundation\RedirectResponse::__construct(): Argument #2 ($status) must be of type int, string given, called in /home/choice21/public_html/jinfeng/app/Helpers/redirect.php on line 21
+Code: 0
+File: /home/choice21/public_html/jinfeng/vendor/symfony/http-foundation/RedirectResponse.php
+Line: 35
+  

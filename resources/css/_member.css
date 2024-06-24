@@ -1,0 +1,10 @@
+.login-page .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.login-page label {
+  width: 65px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 10px; }

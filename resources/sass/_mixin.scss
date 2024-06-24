@@ -1,0 +1,15 @@
+@mixin bg($size: cover,$p: 50% 50%,$repeat: no-repeat) {
+  background-position: $p;
+  -webkit-background-size: $size;
+       -o-background-size: $size;
+          background-size: $size;
+  background-repeat: $repeat;
+}
+@mixin center {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+}

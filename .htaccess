@@ -1,0 +1,128 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+	RewriteRule ^storage/upload/.*\.(htaccess|htpasswd|ini|phps?|fla|psd|log|sh|zip|exe|pl|jsp|asp|htm|sh|cgi|py)$ - [F]
+
+    RewriteEngine On
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+	RewriteCond %{HTTPS} !=on
+
+	RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+	RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+
+	RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+	Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Include-Only
+    RewriteRule ^app/|^api/|^classmap/|^config/|^resources/lang/|^routes/|^setting/|^resources/view/ - [F,L]
+
+	<Files composer.json>
+		order allow,deny
+		deny from all
+	</Files>
+	<Files composer.lock>
+		order allow,deny
+		deny from all
+	</Files>
+	<Files .gitignore>
+		order allow,deny
+		deny from all
+	</Files>
+	<Files .htacces>
+		order allow,deny
+		deny from all
+	</Files>
+	<Files .htaccess.sample>
+		order allow,deny
+		deny from all
+	</Files>
+	<Files ~ "^.*\.([Hh][Tt][Aa])">
+		order allow,deny
+		deny from all
+		satisfy all
+	</Files>	
+	<Files .php_cs>
+		order allow,deny
+		deny from all
+	</Files>
+	<Files .travis.yml>
+		order allow,deny
+		deny from all
+	</Files>
+	<Files CHANGELOG.md>
+		order allow,deny
+		deny from all
+	</Files>
+	<Files CONTRIBUTING.md>
+		order allow,deny
+		deny from all
+	</Files>
+	<Files CONTRIBUTOR_LICENSE_AGREEMENT.html>
+		order allow,deny
+		deny from all
+	</Files>
+	<Files COPYING.txt>
+		order allow,deny
+		deny from all
+	</Files>
+	<Files Gruntfile.js>
+		order allow,deny
+		deny from all
+	</Files>
+	<Files LICENSE.txt>
+		order allow,deny
+		deny from all
+	</Files>
+	<Files LICENSE_AFL.txt>
+		order allow,deny
+		deny from all
+	</Files>
+	<Files nginx.conf.sample>
+		order allow,deny
+		deny from all
+	</Files>
+	<Files package.json>
+		order allow,deny
+		deny from all
+	</Files>
+	<Files php.ini.sample>
+		order allow,deny
+		deny from all
+	</Files>
+	<Files README.md>
+		order allow,deny
+		deny from all
+	</Files>
+	<Files artisan>
+		order allow,deny
+		deny from all
+	</Files>
+ 
+</IfModule>
+
+# =========== Header ===========
+<IfModule mod_headers.c>    
+    # 將所有Cookie設為HttpOnly
+    # Header always edit Set-Cookie (.*) "$1; HTTPOnly; Secure"
+    
+    #隱藏PHP版本
+    Header always unset X-Powered-By
+</IfModule>
+# ==============================

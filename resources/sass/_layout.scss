@@ -1,0 +1,172 @@
+header{
+	transition: 0.3s ease;
+	background-color: rgba(#FFF,0.9);
+	position: relative;
+	box-shadow: 0 3px 6px rgba(#000,.15);
+	@include media-breakpoint-down(sm) {
+		height: 0px;
+	}
+
+	&.active{
+		background-color: rgba(#FFF,1);
+	}
+	.hamburger{
+		background-color: #fff;
+		padding: 10px;
+		padding-bottom: 5px;
+		box-shadow: 0 3px 6px rgba(#000,.16);
+	}
+	.navbar-nav {
+		width: 100%;
+		height: 70px;
+		justify-content: center;
+		align-items: center;
+		.nav-item {
+			position: relative;
+			margin: 0 20px;
+			display: flex;
+			font-size: 1.25rem;
+			font-weight: 600;
+			height: 100%;
+			&:nth-child(3){
+				color: $mc2;
+			}
+			&::before{
+				content: '';
+				position: absolute;
+				bottom: 0;
+				width: 0%;
+				background-color: $mc2;
+				height: 4px;
+			}
+			&:hover{
+				
+				&::before{
+					width: 100%;
+					transition: .3s ease;
+				}
+			}
+			&.left-button{
+				font-size: 0.875rem;
+				color: #6E6E6E;
+				position: absolute;
+				right: 0;
+				&::before{
+					display: none;
+				}
+				&:hover,.active{
+					color: #000;
+				}
+			}
+		}
+		.nav-link {
+			margin: auto;
+			position: relative;
+			height: 100%;
+			width: 100%;
+			display: flex;
+			align-items: center;
+		}
+	}
+	
+	.navbar-brand{
+		padding: 5px 0;
+		position: relative;
+		display: flex;
+		align-items: center;
+		img{
+			height: 50px;
+		}
+		@include media-breakpoint-down(lg) {
+			padding: 0;
+			margin-left: 10px;
+			img{
+				max-width: 250px;
+				padding: 5px 0;
+			}
+		}
+	}
+}
+
+
+#contact{
+	.line{
+		margin-top: 20px;
+		margin-bottom: 30px;
+		width: 100%;
+		background-color: #707070;
+		height: 1px;
+	}
+}
+
+
+#side-btn{
+	position: fixed;
+	right: 0;
+	bottom: 180px;
+	.cube{
+		margin-bottom: 10px;
+		border-radius: 15px 0 0 15px;
+		width: 55px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #343434;
+		color: #FFF;
+		writing-mode: vertical-lr;
+		padding: 15px;
+		font-weight: bold;
+		font-size: 18px;
+		&:hover{
+			box-shadow: 0 3px 20px rgba(#000,.36);
+		}
+		&:nth-child(1){
+			background-color: #F5C628;
+			color: #000;
+			&:hover{
+				background-color: #FFBB00;
+			}
+		}
+		&:nth-child(2){
+			&:hover{
+				background-color: #D82629;
+			}
+		}
+		&:nth-child(3){
+			&:hover{
+				background-color: #26D834;
+			}
+		}
+		&:nth-child(4){
+			&:hover{
+				background-color: #157FEA;
+			}
+		}
+	}
+	i{
+		font-size: 25px;
+	}
+}
+
+#fb-root {
+	z-index: 8000;
+	text-align: center;
+	right: 10px;
+	cursor: pointer;
+	position: fixed;
+	bottom: 90px;
+	background-color: $mc1;
+	width: 60px;
+	height: 60px;
+	border-radius: 100%;
+	font-size: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #FFF;
+	box-shadow: 0 3px 6px rgba(#000,.16);
+	&:hover{
+		background-color: #375B96;
+	}
+}
+

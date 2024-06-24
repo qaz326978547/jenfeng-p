@@ -1,0 +1,49 @@
+body{
+	margin:0;
+	background: rgba( #dae3f5 , 0.5);
+}
+
+.tui-image-editor-controls{	
+	min-height:150px;
+
+	.header{
+		text-align: center;
+		background:linear-gradient(#3468d3, #1955ce);
+		color:#FFFFFF;
+
+		.menu{
+			.menu-item{
+				color:#FFFFFF;
+				background:inherit;
+
+				&:hover , &.active {
+					background:#FFFFFF;
+					color:#000000;
+				}
+			}
+		}
+	}
+
+	.menu{
+		
+		.menu-item{
+			border:1px #CCC solid;
+			border-radius: 10px;
+			background:linear-gradient(#3468d3, #1955ce);
+			color:#FFFFFF;
+			&:hover, &.active{
+				border-color:#3468d3;
+				background:#dae3f5;
+				color:#000000;
+			}
+		}
+
+	}
+
+	.sub-menu-container{
+
+	}
+
+
+
+}

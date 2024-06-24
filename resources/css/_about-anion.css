@@ -1,0 +1,9 @@
+.anion-menu .number {
+  font-size: 50px;
+  font-family: 'Dancing Script'; }
+
+.anion-menu .item {
+  padding: 20px 10px;
+  -webkit-box-shadow: 0 3 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 3 10px rgba(0, 0, 0, 0.6);
+  background-color: #FFF; }

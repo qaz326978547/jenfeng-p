@@ -1,0 +1,153 @@
+::selection {
+	background-color: $mc1;
+	color: #FFF;
+}
+html {
+	font-size: 1rem;
+	letter-spacing: 1px;
+	@include media-breakpoint-down(lg) {
+		font-size: 1rem;
+	}
+	@include media-breakpoint-down(sm) {
+		font-size: .95rem;
+	}
+}
+body {
+	position: relative;
+	background: #FFF;
+	line-height: 1.8;
+	color: $mc3;
+	&#video, &#download{
+		background: url(../_img/page/bg-icon-0.png);
+		position: relative;
+		z-index: 9;
+	}
+	.template{
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		main{
+			flex-grow: 1;
+		}
+	}
+	.bg-icon{
+		background: url(../_img/page/bg-icon-0.png);
+		position: relative;
+		z-index: 9;
+		overflow: hidden;
+		&:before{
+			content: '';
+			position: absolute;
+			right: 0;
+			top: 20px;
+			width: 268px;
+			height: 263px;
+			background: url(../_img/page/bg-icon-r.png) center no-repeat;
+			background-size: cover;
+			z-index: -1;
+			@include media-breakpoint-down(lg) {
+				opacity: .5;
+				width: 134px;
+				height: 131.5px;
+			}
+		}
+		&:after{
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 159px;
+			height: 679px;
+			background: url(../_img/page/bg-icon-l.png) center no-repeat;
+			background-size: cover;
+			z-index: -1;
+			@include media-breakpoint-down(lg) {
+				opacity: .5;
+				width: 79.5px;
+				height: 339.5px;
+			}
+		}
+	}
+}
+.container{
+	@include media-breakpoint-down(xs) {
+		padding-right: 15px;
+    	padding-left: 15px;
+	}
+}
+
+a{
+	transition: 0.3s ease;
+	&:hover{
+		transition: 0.3s ease;
+	}
+}
+
+.navbar-toggler {
+	padding: 0;
+}
+
+.navbar {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.navbar-brand {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.line-height-1 {
+	line-height: 1;
+}
+.line-height-1-8 {
+	line-height: 1.8;
+}
+.line-height-2 {
+	line-height: 2;
+}
+
+.overflow-x-h {
+	overflow-x: hidden;
+}
+.overflow-y-h {
+	overflow-y: hidden;
+}
+.overflow-h {
+	overflow: hidden;
+}
+
+//article{
+	//overflow-x: hidden;
+//}
+
+section{
+	padding: 30px 0;
+	@include media-breakpoint-up(lg) {
+		padding: 30px 0;
+	}
+}
+
+.g-recaptcha{
+    text-align: center;
+    display: inline-block;
+	
+}
+button{
+	padding: 0;
+	border: none;
+	box-shadow: none;
+	background-color: transparent;
+}
+
+select{
+	&:focus{
+		outline: 1px solid $mc1;
+	} 
+}

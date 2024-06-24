@@ -1,0 +1,34 @@
+.product-item:hover .pic img {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  -webkit-transition: 1s ease;
+  -o-transition: 1s ease;
+  transition: 1s ease; }
+
+.product-item:hover .pic::after {
+  opacity: 1;
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
+  transition: .3s ease; }
+
+.product-item .pic {
+  padding-bottom: 85.52%;
+  overflow: hidden;
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
+  transition: .3s ease;
+  position: relative; }
+  .product-item .pic::after {
+    content: '';
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    border: 1px #FFF solid;
+    z-index: 1;
+    top: 2.5%;
+    left: 2.5%;
+    opacity: 0;
+    -webkit-transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease; }

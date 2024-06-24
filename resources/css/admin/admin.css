@@ -1,0 +1,1031 @@
+@charset "UTF-8";
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  text-align: left;
+  overflow: visible;
+  font-size: 16px;
+  color: #000;
+  background-color: #FFF;
+  line-height: 1.8;
+  font-family: '微軟正黑體' , sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+/*共用屬性*/
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+* {
+  -webkit-overflow-scrolling: touch; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+a:active, a:hover {
+  outline: none; }
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto; }
+
+input[type="text"] {
+  -webkit-appearance: none;
+  border-radius: 0; }
+
+/*泛用表格*/
+.t {
+  display: table; }
+  .t > .t-row, .t > ul {
+    display: table-row; }
+    .t > .t-row > .t-cell, .t > .t-row > li, .t > ul > .t-cell, .t > ul > li {
+      display: table-cell;
+      vertical-align: middle;
+      border-collapse: collapse;
+      margin: 0;
+      padding: 0; }
+
+/*定義區塊*/
+.container {
+  margin: auto;
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  max-width: 100%;
+  padding-left: 10px;
+  padding-right: 10px; }
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  position: relative;
+  min-height: 1px;
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px; }
+
+.col-12 {
+  width: 100%; }
+
+.col-11 {
+  width: 91.66666667%; }
+
+.col-10 {
+  width: 83.33333333%; }
+
+.col-9 {
+  width: 75%; }
+
+.col-8 {
+  width: 66.66666667%; }
+
+.col-7 {
+  width: 58.33333333%; }
+
+.col-6 {
+  width: 50%; }
+
+.col-5 {
+  width: 41.66666667%; }
+
+.col-4 {
+  width: 33.33333333%; }
+
+.col-3 {
+  width: 25%; }
+
+.col-2 {
+  width: 16.66666667%; }
+
+.col-1 {
+  width: 8.33333333%; }
+
+.pic {
+  position: relative;
+  font-size: 0;
+  width: 100%;
+  height: 0;
+  display: block; }
+  .pic > span {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0; }
+    .pic > span:before {
+      content: ' ';
+      display: inline-block;
+      height: 100%;
+      width: 0;
+      vertical-align: middle; }
+    .pic > span > img, .pic > span > iframe {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      display: inline-block;
+      vertical-align: middle; }
+    .pic > span > iframe {
+      width: 100%;
+      height: 100%; }
+
+.cf:after,
+.row:after,
+dl:after {
+  display: block;
+  height: 0;
+  clear: both;
+  content: "";
+  visibility: hidden; }
+
+.bg_img {
+  background-position: 50% 50%;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+#index .block.list ul.row {
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px; }
+
+#index hr {
+  width: 90%;
+  margin: auto;
+  border: 1px #EEE double; }
+
+#index div.block-title {
+  width: 90%;
+  margin: 20px auto;
+  font-size: 21px;
+  color: #666666;
+  font-weight: bold;
+  line-height: 30px; }
+  #index div.block-title i {
+    color: #123681;
+    font-size: 1.2em; }
+
+#index .data-block {
+  width: 99%;
+  margin: 10px auto;
+  font-size: 16px;
+  line-height: 2;
+  text-align: center;
+  border: 1px #123681 solid;
+  border-radius: 5px; }
+  #index .data-block > div {
+    padding: 5px; }
+  #index .data-block .title {
+    background: #123681;
+    color: #FFFFFF; }
+  #index .data-block .inner {
+    color: #333;
+    line-height: 30px; }
+    #index .data-block .inner i {
+      font-weight: bold;
+      color: red;
+      font-size: 1.2em; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: none; }
+  a:active, a:hover {
+    outline: none; }
+
+img {
+  max-width: 100%;
+  width: auto;
+  height: auto; }
+
+/*----- 表格 -----*/
+table {
+  width: 100%; }
+  table th, table td {
+    padding: 5px 2px; }
+  table .textarea-row th {
+    vertical-align: top; }
+
+::-webkit-input-placeholder {
+  /* Chrome */
+  color: #666; }
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #666; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #666;
+  opacity: 1; }
+
+:-moz-placeholder {
+  /* Firefox 4 - 18 */
+  color: #666;
+  opacity: 1; }
+
+/*----- 泛用表格 -----*/
+dl {
+  padding: 5px 0; }
+  dl dt, dl dd {
+    display: inline-block;
+    vertical-align: middle; }
+
+input {
+  display: inline-block;
+  -webkit-appearance: normal;
+  -moz-appearance: normal;
+  appearance: normal;
+  border-radius: 10px;
+  border: 1px #CCC solid; }
+  input[type=text] {
+    padding: 5px;
+    border-raius: 5px; }
+
+select {
+  min-width: 100px;
+  padding: 5px; }
+
+/*登入頁面*/
+#login_form {
+  width: 600px;
+  max-width: 100%;
+  margin: 40px auto;
+  border: 2px #CCC solid;
+  border-radius: 10px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0px 10px 30px;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 10px 30px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 40px 20px; }
+  #login_form img {
+    max-width: 250px;
+    margin: 30px auto; }
+  #login_form div.t {
+    width: 450px;
+    margin: auto; }
+    #login_form div.t li {
+      border-bottom: 1px #CCC dashed; }
+      #login_form div.t li.left {
+        width: 120px;
+        text-align: right;
+        color: #666; }
+        #login_form div.t li.left:before {
+          content: "\f023";
+          font-family: 'FontAwesome';
+          margin: 5px 10px;
+          font-size: 19px;
+          color: #999; }
+        #login_form div.t li.left.user:before {
+          content: "\f007"; }
+      #login_form div.t li input {
+        width: 100%;
+        background: rgba(238, 238, 238, 0.3);
+        padding: 10px 5px;
+        text-align: left;
+        margin: 10px 20px;
+        border: 1px #CCC solid;
+        border-radius: 5px; }
+  #login_form div.button {
+    padding: 20px 0px;
+    text-align: center; }
+    #login_form div.button input {
+      display: inline-block;
+      width: 100px;
+      border-radius: 5px;
+      border: 1px #CCC solid;
+      cursor: pointer;
+      text-align: center;
+      padding: 5px 0px;
+      background: #4ab4fc;
+      color: #FFFFFF; }
+  #login_form .copyright {
+    color: #999;
+    font-size: 12px;
+    text-align: center; }
+
+body {
+  display: table; }
+
+body > .row {
+  display: table-row;
+  height: 100%;
+  min-height: 100vh; }
+
+#left, #main {
+  display: table-cell;
+  min-height: 100%;
+  height: auto;
+  vertical-align: top; }
+
+/*左側選單*/
+#left {
+  width: 200px;
+  overflow: visible;
+  background: -webkit-gradient(linear, left top, right top, from(#37538c), to(#123681));
+  background: -webkit-linear-gradient(left, #37538c, #123681);
+  background: -o-linear-gradient(left, #37538c, #123681);
+  background: linear-gradient(left, #37538c, #123681);
+  border-right: 2px #EEE solid;
+  font-size: 1rem;
+  line-height: 1.6; }
+  #left img {
+    max-width: 130px;
+    margin: 10px auto;
+    display: block; }
+  #left #logo {
+    text-align: center;
+    color: #FFFFFF;
+    padding: 10px 0 5px;
+    margin: 0 auto; }
+  #left div.page {
+    width: 90%;
+    margin: 5px auto;
+    padding: 10px 0px;
+    font-size: 0.9em; }
+    #left div.page .title {
+      background: -webkit-gradient(linear, left top, left bottom, from(#3468d3), to(#1955ce));
+      background: -webkit-linear-gradient(#3468d3, #1955ce);
+      background: -o-linear-gradient(#3468d3, #1955ce);
+      background: linear-gradient(#3468d3, #1955ce);
+      padding: 3px 5px;
+      color: #FFFFFF; }
+    #left div.page .inner {
+      background: #FFF;
+      color: #333;
+      border: 1px #999 solid;
+      border-top: none;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      margin-top: -2px;
+      padding-top: 2px; }
+      #left div.page .inner a {
+        display: block;
+        text-align: left;
+        font-size: 0.8em;
+        margin: 5px 0px 5px 10px; }
+      #left div.page .inner select {
+        width: 90%;
+        margin: 5px 0px 5px 10px; }
+
+/*右側管理頁*/
+#main {
+  width: calc(100% - 200px);
+  padding: 10px 30px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  text-align: left;
+  background: #dae3f5;
+  /*主管理區*/
+  /*main*/ }
+  #main main {
+    /*.block*/ }
+    #main main h3.title {
+      font-size: 2rem;
+      margin: 5px auto;
+      color: #000; }
+      #main main h3.title:before {
+        display: inline-block;
+        font-family: 'FontAwesome';
+        color: #0c4c78;
+        content: "\f1b3";
+        margin-right: 10px; }
+    #main main .notice {
+      border: 1px #CCC solid;
+      background: #fff2ad;
+      color: #e54e0c;
+      border-radius: 5px;
+      margin: 10px auto;
+      padding: 5px 10px;
+      display: none; }
+      #main main .notice:before {
+        content: "\f05a";
+        font-family: 'FontAwesome';
+        display: inline-block;
+        margin: 0 10px; }
+      #main main .notice.show {
+        display: block; }
+    #main main .block {
+      background: #ffffff;
+      color: #333333;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px auto;
+      /*div.t*/
+      /*產品架用 列表上方快速新增*/
+      /*列表*/
+      /*.list-form*/
+      /*.form*/
+      /*次選單*/
+      /*.subList*/ }
+      #main main .block.path {
+        background: #FFFFFF;
+        border-bottom: 2px #CCC solid; }
+        #main main .block.path:before {
+          display: inline-block;
+          content: "\f013";
+          font-family: 'FontAwesome';
+          margin: 0 5px; }
+      #main main .block div.t {
+        /*ul*/ }
+        #main main .block div.t ul {
+          width: 100%;
+          /*li*/ }
+          #main main .block div.t ul li {
+            width: 100%;
+            padding: 5px;
+            height: 36px;
+            line-height: 36px; }
+      #main main .block .quick_form {
+        width: 98%;
+        margin: 10px auto;
+        padding: 5px;
+        border-bottom: 2px #bbbbbb solid; }
+      #main main .block .list_form {
+        /*.list-form*/ }
+        #main main .block .list_form div.t {
+          width: 98%;
+          margin: 20px auto;
+          border-radius: 5px;
+          background: #FFFFFF; }
+          #main main .block .list_form div.t > div {
+            padding: 20px;
+            text-align: center; }
+          #main main .block .list_form div.t ul li {
+            width: auto;
+            border-bottom: 1px #999 solid; }
+            #main main .block .list_form div.t ul li.del {
+              min-width: 50px; }
+            #main main .block .list_form div.t ul li img {
+              min-width: 150px;
+              height: auto;
+              max-width: 300px;
+              max-height: none; }
+          #main main .block .list_form div.t ul.head li {
+            color: #FFFFFF;
+            background: #0e0d16; }
+            #main main .block .list_form div.t ul.head li:first-child {
+              border-top-left-radius: 5px; }
+            #main main .block .list_form div.t ul.head li:last-child {
+              border-top-right-radius: 5px; }
+          #main main .block .list_form div.t ul:nth-child(even) li {
+            background: #eee; }
+          #main main .block .list_form div.t ul:last-child li:first-child {
+            border-bottom-left-radius: 5px; }
+          #main main .block .list_form div.t ul:last-child li:last-child {
+            border-bottom-right-radius: 5px; }
+        #main main .block .list_form div.page {
+          text-align: center;
+          padding: 5px;
+          font-size: 0.9em;
+          color: #333; }
+          #main main .block .list_form div.page a {
+            display: inline-block;
+            margin: 0px 2px;
+            text-align: center;
+            color: #666;
+            -webkit-transition: all 0.3s linear;
+            -o-transition: all 0.3s linear;
+            transition: all 0.3s linear;
+            border: 1px #CCC solid;
+            background: #FFF;
+            border-radius: 5px;
+            padding: 5px 10px; }
+            #main main .block .list_form div.page a:hover {
+              color: #FFF;
+              background: #1f6b9f; }
+            #main main .block .list_form div.page a.selected {
+              background: #003b63;
+              color: #FFF; }
+          #main main .block .list_form div.page p {
+            padding: 10px 0px; }
+            #main main .block .list_form div.page p span {
+              color: blue; }
+      #main main .block.form, #main main .block .form {
+        /*li*/ }
+        #main main .block.form > table, #main main .block .form > table {
+          width: 100%; }
+        #main main .block.form li, #main main .block.form > table, #main main .block .form li, #main main .block .form > table {
+          line-height: 40px; }
+          #main main .block.form li label, #main main .block.form li th.form_name, #main main .block.form > table label, #main main .block.form > table th.form_name, #main main .block .form li label, #main main .block .form li th.form_name, #main main .block .form > table label, #main main .block .form > table th.form_name {
+            border-right: 1px #AAA solid;
+            width: 120px;
+            text-align: right;
+            padding: 0px 10px 0px 0px;
+            float: left; }
+            #main main .block.form li label.line, #main main .block.form li label.notice, #main main .block.form li th.form_name.line, #main main .block.form li th.form_name.notice, #main main .block.form > table label.line, #main main .block.form > table label.notice, #main main .block.form > table th.form_name.line, #main main .block.form > table th.form_name.notice, #main main .block .form li label.line, #main main .block .form li label.notice, #main main .block .form li th.form_name.line, #main main .block .form li th.form_name.notice, #main main .block .form > table label.line, #main main .block .form > table label.notice, #main main .block .form > table th.form_name.line, #main main .block .form > table th.form_name.notice {
+              width: 100%;
+              text-align: left;
+              border-right: none;
+              background: -webkit-gradient(linear, left top, left bottom, from(#3a8bc2), color-stop(#3a8bc2), color-stop(#3a8bc2), to(#2472a8));
+              background: -webkit-linear-gradient(#3a8bc2, #3a8bc2, #3a8bc2, #2472a8);
+              background: -o-linear-gradient(#3a8bc2, #3a8bc2, #3a8bc2, #2472a8);
+              background: linear-gradient(#3a8bc2, #3a8bc2, #3a8bc2, #2472a8);
+              color: #FFFFFF;
+              border-radius: 5px;
+              margin: 10px 0px;
+              padding-left: 30px; }
+              #main main .block.form li label.line:before, #main main .block.form li label.notice:before, #main main .block.form li th.form_name.line:before, #main main .block.form li th.form_name.notice:before, #main main .block.form > table label.line:before, #main main .block.form > table label.notice:before, #main main .block.form > table th.form_name.line:before, #main main .block.form > table th.form_name.notice:before, #main main .block .form li label.line:before, #main main .block .form li label.notice:before, #main main .block .form li th.form_name.line:before, #main main .block .form li th.form_name.notice:before, #main main .block .form > table label.line:before, #main main .block .form > table label.notice:before, #main main .block .form > table th.form_name.line:before, #main main .block .form > table th.form_name.notice:before {
+                content: "\f0da";
+                font-family: 'FontAwesome';
+                display: inline-block;
+                margin: 0 10px; }
+            #main main .block.form li label.notice, #main main .block.form li th.form_name.notice, #main main .block.form > table label.notice, #main main .block.form > table th.form_name.notice, #main main .block .form li label.notice, #main main .block .form li th.form_name.notice, #main main .block .form > table label.notice, #main main .block .form > table th.form_name.notice {
+              display: block;
+              border: 1px #CCC solid;
+              background: #fff2ad;
+              color: #e54e0c;
+              margin: 5px auto;
+              padding: 1px 10px; }
+              #main main .block.form li label.notice:before, #main main .block.form li th.form_name.notice:before, #main main .block.form > table label.notice:before, #main main .block.form > table th.form_name.notice:before, #main main .block .form li label.notice:before, #main main .block .form li th.form_name.notice:before, #main main .block .form > table label.notice:before, #main main .block .form > table th.form_name.notice:before {
+                content: "\f05a"; }
+          #main main .block.form li > div, #main main .block.form li th.form_input, #main main .block.form > table > div, #main main .block.form > table th.form_input, #main main .block .form li > div, #main main .block .form li th.form_input, #main main .block .form > table > div, #main main .block .form > table th.form_input {
+            width: calc(100% - 120px);
+            float: left;
+            padding-left: 10px;
+            min-height: 40px;
+            text-align: left; }
+            #main main .block.form li > div input, #main main .block.form li > div select, #main main .block.form li th.form_input input, #main main .block.form li th.form_input select, #main main .block.form > table > div input, #main main .block.form > table > div select, #main main .block.form > table th.form_input input, #main main .block.form > table th.form_input select, #main main .block .form li > div input, #main main .block .form li > div select, #main main .block .form li th.form_input input, #main main .block .form li th.form_input select, #main main .block .form > table > div input, #main main .block .form > table > div select, #main main .block .form > table th.form_input input, #main main .block .form > table th.form_input select {
+              width: auto;
+              min-width: 150px;
+              border-radius: 5px;
+              height: 30px;
+              line-height: 30px;
+              margin: 3px 5px;
+              border: 1px #999 solid;
+              padding: 0px 5px; }
+              #main main .block.form li > div input[type=radio], #main main .block.form li > div input[type=checkbox], #main main .block.form li > div select[type=radio], #main main .block.form li > div select[type=checkbox], #main main .block.form li th.form_input input[type=radio], #main main .block.form li th.form_input input[type=checkbox], #main main .block.form li th.form_input select[type=radio], #main main .block.form li th.form_input select[type=checkbox], #main main .block.form > table > div input[type=radio], #main main .block.form > table > div input[type=checkbox], #main main .block.form > table > div select[type=radio], #main main .block.form > table > div select[type=checkbox], #main main .block.form > table th.form_input input[type=radio], #main main .block.form > table th.form_input input[type=checkbox], #main main .block.form > table th.form_input select[type=radio], #main main .block.form > table th.form_input select[type=checkbox], #main main .block .form li > div input[type=radio], #main main .block .form li > div input[type=checkbox], #main main .block .form li > div select[type=radio], #main main .block .form li > div select[type=checkbox], #main main .block .form li th.form_input input[type=radio], #main main .block .form li th.form_input input[type=checkbox], #main main .block .form li th.form_input select[type=radio], #main main .block .form li th.form_input select[type=checkbox], #main main .block .form > table > div input[type=radio], #main main .block .form > table > div input[type=checkbox], #main main .block .form > table > div select[type=radio], #main main .block .form > table > div select[type=checkbox], #main main .block .form > table th.form_input input[type=radio], #main main .block .form > table th.form_input input[type=checkbox], #main main .block .form > table th.form_input select[type=radio], #main main .block .form > table th.form_input select[type=checkbox] {
+                min-width: 0;
+                height: auto;
+                -webkit-appearance: normal;
+                -moz-appearance: normal;
+                appearance: normal; }
+              #main main .block.form li > div input[name=zip], #main main .block.form li > div input[name=p_numbers], #main main .block.form li > div select[name=zip], #main main .block.form li > div select[name=p_numbers], #main main .block.form li th.form_input input[name=zip], #main main .block.form li th.form_input input[name=p_numbers], #main main .block.form li th.form_input select[name=zip], #main main .block.form li th.form_input select[name=p_numbers], #main main .block.form > table > div input[name=zip], #main main .block.form > table > div input[name=p_numbers], #main main .block.form > table > div select[name=zip], #main main .block.form > table > div select[name=p_numbers], #main main .block.form > table th.form_input input[name=zip], #main main .block.form > table th.form_input input[name=p_numbers], #main main .block.form > table th.form_input select[name=zip], #main main .block.form > table th.form_input select[name=p_numbers], #main main .block .form li > div input[name=zip], #main main .block .form li > div input[name=p_numbers], #main main .block .form li > div select[name=zip], #main main .block .form li > div select[name=p_numbers], #main main .block .form li th.form_input input[name=zip], #main main .block .form li th.form_input input[name=p_numbers], #main main .block .form li th.form_input select[name=zip], #main main .block .form li th.form_input select[name=p_numbers], #main main .block .form > table > div input[name=zip], #main main .block .form > table > div input[name=p_numbers], #main main .block .form > table > div select[name=zip], #main main .block .form > table > div select[name=p_numbers], #main main .block .form > table th.form_input input[name=zip], #main main .block .form > table th.form_input input[name=p_numbers], #main main .block .form > table th.form_input select[name=zip], #main main .block .form > table th.form_input select[name=p_numbers] {
+                width: 50px;
+                min-width: 0; }
+              #main main .block.form li > div input.tel, #main main .block.form li > div input.cel, #main main .block.form li > div input.link, #main main .block.form li > div input.address, #main main .block.form li > div input.mail, #main main .block.form li > div select.tel, #main main .block.form li > div select.cel, #main main .block.form li > div select.link, #main main .block.form li > div select.address, #main main .block.form li > div select.mail, #main main .block.form li th.form_input input.tel, #main main .block.form li th.form_input input.cel, #main main .block.form li th.form_input input.link, #main main .block.form li th.form_input input.address, #main main .block.form li th.form_input input.mail, #main main .block.form li th.form_input select.tel, #main main .block.form li th.form_input select.cel, #main main .block.form li th.form_input select.link, #main main .block.form li th.form_input select.address, #main main .block.form li th.form_input select.mail, #main main .block.form > table > div input.tel, #main main .block.form > table > div input.cel, #main main .block.form > table > div input.link, #main main .block.form > table > div input.address, #main main .block.form > table > div input.mail, #main main .block.form > table > div select.tel, #main main .block.form > table > div select.cel, #main main .block.form > table > div select.link, #main main .block.form > table > div select.address, #main main .block.form > table > div select.mail, #main main .block.form > table th.form_input input.tel, #main main .block.form > table th.form_input input.cel, #main main .block.form > table th.form_input input.link, #main main .block.form > table th.form_input input.address, #main main .block.form > table th.form_input input.mail, #main main .block.form > table th.form_input select.tel, #main main .block.form > table th.form_input select.cel, #main main .block.form > table th.form_input select.link, #main main .block.form > table th.form_input select.address, #main main .block.form > table th.form_input select.mail, #main main .block .form li > div input.tel, #main main .block .form li > div input.cel, #main main .block .form li > div input.link, #main main .block .form li > div input.address, #main main .block .form li > div input.mail, #main main .block .form li > div select.tel, #main main .block .form li > div select.cel, #main main .block .form li > div select.link, #main main .block .form li > div select.address, #main main .block .form li > div select.mail, #main main .block .form li th.form_input input.tel, #main main .block .form li th.form_input input.cel, #main main .block .form li th.form_input input.link, #main main .block .form li th.form_input input.address, #main main .block .form li th.form_input input.mail, #main main .block .form li th.form_input select.tel, #main main .block .form li th.form_input select.cel, #main main .block .form li th.form_input select.link, #main main .block .form li th.form_input select.address, #main main .block .form li th.form_input select.mail, #main main .block .form > table > div input.tel, #main main .block .form > table > div input.cel, #main main .block .form > table > div input.link, #main main .block .form > table > div input.address, #main main .block .form > table > div input.mail, #main main .block .form > table > div select.tel, #main main .block .form > table > div select.cel, #main main .block .form > table > div select.link, #main main .block .form > table > div select.address, #main main .block .form > table > div select.mail, #main main .block .form > table th.form_input input.tel, #main main .block .form > table th.form_input input.cel, #main main .block .form > table th.form_input input.link, #main main .block .form > table th.form_input input.address, #main main .block .form > table th.form_input input.mail, #main main .block .form > table th.form_input select.tel, #main main .block .form > table th.form_input select.cel, #main main .block .form > table th.form_input select.link, #main main .block .form > table th.form_input select.address, #main main .block .form > table th.form_input select.mail {
+                width: 90%; }
+            #main main .block.form li > div textarea, #main main .block.form li th.form_input textarea, #main main .block.form > table > div textarea, #main main .block.form > table th.form_input textarea, #main main .block .form li > div textarea, #main main .block .form li th.form_input textarea, #main main .block .form > table > div textarea, #main main .block .form > table th.form_input textarea {
+              width: 100%;
+              height: 200px; }
+            #main main .block.form li > div.address select, #main main .block.form li > div.address input, #main main .block.form li th.form_input.address select, #main main .block.form li th.form_input.address input, #main main .block.form > table > div.address select, #main main .block.form > table > div.address input, #main main .block.form > table th.form_input.address select, #main main .block.form > table th.form_input.address input, #main main .block .form li > div.address select, #main main .block .form li > div.address input, #main main .block .form li th.form_input.address select, #main main .block .form li th.form_input.address input, #main main .block .form > table > div.address select, #main main .block .form > table > div.address input, #main main .block .form > table th.form_input.address select, #main main .block .form > table th.form_input.address input {
+              width: auto; }
+      #main main .block #pcList .subList .item {
+        text-align: center; }
+      #main main .block .fa-refresh {
+        color: #121be1;
+        cursor: pointer; }
+      #main main .block #psList2 {
+        background: #FFFFFF;
+        border: 3px #CCCCCC solid;
+        padding: 20px; }
+      #main main .block .subList {
+        /*item1,2*/ }
+        #main main .block .subList .item {
+          min-width: 150px;
+          height: auto;
+          margin: 5px;
+          display: inline-block;
+          border: 5px #477dce solid;
+          border-radius: 5px;
+          overflow: hidden;
+          position: relative;
+          -webkit-transition: all 0.3s;
+          -o-transition: all 0.3s;
+          transition: all 0.3s;
+          text-align: left; }
+          #main main .block .subList .item .s-button {
+            display: none;
+            position: absolute;
+            right: 1px;
+            top: 3px;
+            color: #c21c1c;
+            cursor: pointer;
+            z-index: 999;
+            width: 30px;
+            font-size: 30px;
+            line-height: 30px;
+            text-shadow: #FFF 0px 0px 5px,#FFF 0px 0px 5px; }
+            #main main .block .subList .item .s-button.del {
+              top: 1px; }
+            #main main .block .subList .item .s-button.open {
+              right: 35px;
+              color: #477dce;
+              font-size: 25px; }
+            #main main .block .subList .item .s-button.edit-pic {
+              color: #ab4642;
+              font-size: 23px;
+              right: 65px; }
+          #main main .block .subList .item .pic {
+            width: 100%;
+            height: 125px;
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat; }
+          #main main .block .subList .item input {
+            margin: 0;
+            border-radius: 0; }
+            #main main .block .subList .item input[type=button] {
+              width: 100%; }
+          #main main .block .subList .item label.button {
+            width: 100%;
+            margin: 0;
+            border-radius: 0;
+            text-align: center;
+            font-size: 14px; }
+          #main main .block .subList .item:hover {
+            border-color: #c21c1c; }
+            #main main .block .subList .item:hover .s-button {
+              display: block; }
+          #main main .block .subList .item.link-item {
+            width: 255px; }
+        #main main .block .subList .form-item {
+          border: 2px #EEE solid;
+          padding: 10px;
+          background: #FFF; }
+        #main main .block .subList .cstable {
+          width: auto;
+          border: 2px #3a8bc2 solid;
+          table-layout: collapse;
+          background: #FFF; }
+          #main main .block .subList .cstable td {
+            min-width: 150px;
+            text-align: center;
+            border: 1px #3a8bc2 solid; }
+            #main main .block .subList .cstable td.c-row, #main main .block .subList .cstable td.s-row {
+              background: -webkit-gradient(linear, left top, left bottom, from(#136196), color-stop(#136196), color-stop(#136196), to(#3a8bc2));
+              background: -webkit-linear-gradient(#136196, #136196, #136196, #3a8bc2);
+              background: -o-linear-gradient(#136196, #136196, #136196, #3a8bc2);
+              background: linear-gradient(#136196, #136196, #136196, #3a8bc2);
+              color: #FFF; }
+            #main main .block .subList .cstable td.empty {
+              background: #EEE; }
+      #main main .block .sub-form {
+        width: 100%; }
+        #main main .block .sub-form td {
+          font-size: 0.9rem;
+          line-height: 1.5;
+          border-bottom: 1px #CCC dashed; }
+          #main main .block .sub-form td input {
+            border: 1px #AAA solid;
+            border-radius: 5px;
+            width: auto;
+            min-width: 100px; }
+
+.order {
+  /*.shop_list*/ }
+  .order ul.head {
+    border-radius: 5px;
+    color: #FFFFFF;
+    background: -webkit-gradient(linear, left top, left bottom, from(#3a8bc2), color-stop(#3a8bc2), color-stop(#3a8bc2), to(#2472a8));
+    background: -webkit-linear-gradient(#3a8bc2, #3a8bc2, #3a8bc2, #2472a8);
+    background: -o-linear-gradient(#3a8bc2, #3a8bc2, #3a8bc2, #2472a8);
+    background: linear-gradient(#3a8bc2, #3a8bc2, #3a8bc2, #2472a8); }
+    .order ul.head li {
+      text-align: center; }
+  .order ul.data li {
+    text-align: center; }
+  .order .shop_list {
+    width: 100% !important;
+    /*ul*/ }
+    .order .shop_list ul {
+      color: #333333;
+      font-size: 15px;
+      line-height: 1.6;
+      text-align: center;
+      /*> li*/ }
+      .order .shop_list ul.head {
+        background: #F0EFE8;
+        height: 50px;
+        line-height: 50px;
+        text-align: center; }
+        .order .shop_list ul.head > li {
+          border-bottom: none;
+          padding: 0; }
+      .order .shop_list ul > li {
+        border-bottom: 1px #ccc solid;
+        padding: 15px 0px !important;
+        width: auto !important; }
+        .order .shop_list ul > li.no {
+          width: 50px; }
+        .order .shop_list ul > li.list_item {
+          padding-left: 50px;
+          padding-right: 50px;
+          text-align: left; }
+          .order .shop_list ul > li.list_item .img-row {
+            width: 140px !important;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 20px;
+            float: none !important; }
+            .order .shop_list ul > li.list_item .img-row .pic {
+              padding-bottom: 90%;
+              height: 0;
+              margin: auto; }
+              .order .shop_list ul > li.list_item .img-row .pic span {
+                left: 0;
+                top: 0; }
+          .order .shop_list ul > li.list_item .detail {
+            display: inline-block;
+            vertical-align: middle;
+            color: #000000;
+            width: auto !important;
+            float: none !important; }
+        .order .shop_list ul > li.list_count, .order .shop_list ul > li.price, .order .shop_list ul > li.sum {
+          width: 160px; }
+        .order .shop_list ul > li.list_count ul.count {
+          display: block;
+          width: 100%; }
+          .order .shop_list ul > li.list_count ul.count li {
+            display: block;
+            float: left;
+            margin: auto;
+            width: 58%;
+            padding: 0;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #FFF;
+            font-size: 15px;
+            border: none;
+            border-radius: 5px;
+            -webkit-transition: all 0.2s linear;
+            -o-transition: all 0.2s linear;
+            transition: all 0.2s linear; }
+            .order .shop_list ul > li.list_count ul.count li:hover {
+              background: #040B8C; }
+            .order .shop_list ul > li.list_count ul.count li.down, .order .shop_list ul > li.list_count ul.count li.up {
+              width: 20%;
+              margin: 0;
+              cursor: pointer;
+              background: #24A6FB;
+              border-top-right-radius: 0px;
+              border-bottom-right-radius: 0px;
+              border-top-left-radius: 5px;
+              border-bottom-left-radius: 5px; }
+            .order .shop_list ul > li.list_count ul.count li.up {
+              border-top-left-radius: 0px;
+              border-bottom-left-radius: 0px;
+              border-top-right-radius: 5px;
+              border-bottom-right-radius: 5px; }
+            .order .shop_list ul > li.list_count ul.count li input {
+              width: 100%;
+              border-top: 1px #DDDDDD solid;
+              border-bottom: 1px #DDDDDD solid;
+              height: 40px;
+              line-height: 40px;
+              text-align: center; }
+        .order .shop_list ul > li.sum {
+          color: #FF391E; }
+        .order .shop_list ul > li.del {
+          width: 80px; }
+          .order .shop_list ul > li.del div {
+            cursor: pointer; }
+            .order .shop_list ul > li.del div:before {
+              font-size: 35px;
+              display: inline-block;
+              content: "\f00d";
+              font-family: 'FontAwesome'; }
+  .order #total_price {
+    color: #FF391E;
+    font-size: 20px;
+    font-weight: bold; }
+
+/*元件*/
+a.button, input.button, label.button {
+  display: inline-block;
+  width: 150px;
+  text-align: center;
+  color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#5672d9), to(#425fcd));
+  background: -webkit-linear-gradient(#5672d9, #425fcd);
+  background: -o-linear-gradient(#5672d9, #425fcd);
+  background: linear-gradient(#5672d9, #425fcd);
+  line-height: 30px;
+  height: 32px;
+  margin: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: inset -5px -5px 5px rgba(153, 153, 153, 0.3);
+  box-shadow: inset -5px -5px 5px rgba(153, 153, 153, 0.3);
+  -webkit-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  cursor: pointer; }
+  a.button:hover, input.button:hover, label.button:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#2643b0), to(#1634a1));
+    background: -webkit-linear-gradient(#2643b0, #1634a1);
+    background: -o-linear-gradient(#2643b0, #1634a1);
+    background: linear-gradient(#2643b0, #1634a1); }
+  a.button.file:before, input.button.file:before, label.button.file:before {
+    content: "\f1c6";
+    font-family: 'FontAwesome';
+    display: inline-block;
+    margin-right: 10px; }
+
+input.button {
+  height: 35px; }
+
+div.button {
+  text-align: center; }
+
+a.s-button {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0px 7px 0px 0px;
+  padding: 13px 0 0;
+  color: #FFFFFF;
+  font-size: 18px;
+  width: 50px;
+  height: 45px;
+  background: #4340ad;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center; }
+  a.s-button:hover {
+    background: #28268d; }
+
+.login-box {
+  padding: 2rem 5%; }
+  .login-box .login-link {
+    color: #333;
+    margin-left: 15px; }
+    .login-box .login-link .fa {
+      margin-left: 5px; }
+    .login-box .login-link:hover {
+      color: #666; }
+  .login-box .link-row {
+    margin-top: 2rem; }
+
+.login-form {
+  color: #666; }
+  .login-form dt {
+    padding: 12px 0;
+    line-height: 2.2rem;
+    position: relative; }
+    .login-form dt #account_check {
+      position: absolute;
+      right: 0px;
+      top: 12px; }
+  .login-form .txt {
+    float: left;
+    width: 17%; }
+  .login-form .form-cell {
+    background-color: #fff;
+    padding: 0 10px;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-family: "微軟正黑體";
+    width: 100%;
+    border: 1px #333 solid; }
+    .login-form .form-cell:focus {
+      outline: 0; }
+  .login-form .form-r {
+    float: right;
+    width: 83%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .login-form .form-r .cell {
+      margin-right: 5px; }
+  .login-form .form-cell {
+    float: left;
+    width: 83%; }
+  .login-form .form-cell-half {
+    float: left;
+    width: 50%;
+    margin-right: 5px; }
+
+.searchList {
+  width: 98%;
+  border: 1px #aaa solid;
+  margin: 20px auto;
+  border-radius: 5px; }
+  .searchList .p-unit > div {
+    width: 95%;
+    background: #FFF;
+    margin: 10px auto;
+    border: 2px #ccc solid;
+    border-radius: 5px;
+    padding: 5px 0;
+    cursor: pointer; }
+    .searchList .p-unit > div .checkbox {
+      text-align: right;
+      padding: 3px 5px;
+      font-size: 1.2rem;
+      line-height: 2; }
+    .searchList .p-unit > div .pic {
+      width: 95%;
+      padding-bottom: 80%;
+      margin: auto; }
+    .searchList .p-unit > div .text {
+      width: 90%;
+      margin: 5px auto;
+      font-size: 0.8rem;
+      line-height: 20px;
+      height: 100px;
+      overflow: hidden; }
+
+#schedule #calendar-block, #schedule .introduce-txt, #schedule #external-events {
+  width: 1000px;
+  max-width: 99%;
+  margin: 20px auto; }
+
+#schedule .introduce-txt, #schedule #external-events {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding: 0px 10px;
+  border: 1px #CCC solid;
+  border-radius: 5px;
+  background: #EEE; }
+  #schedule .introduce-txt ul, #schedule #external-events ul {
+    margin: 20px 20px; }
+    #schedule .introduce-txt ul li, #schedule #external-events ul li {
+      list-style: circle; }
+  #schedule .introduce-txt a.button, #schedule #external-events a.button {
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px #999 solid;
+    margin: 10px 5px;
+    padding: 10px;
+    color: #FFFFFF;
+    background: -webkit-gradient(linear, left top, left bottom, from(#5672d9), to(#425fcd));
+    background: -webkit-linear-gradient(#5672d9, #425fcd);
+    background: -o-linear-gradient(#5672d9, #425fcd);
+    background: linear-gradient(#5672d9, #425fcd); }
+
+#schedule #external-events {
+  background: #dfdfd0;
+  display: block;
+  padding: 10px; }
+  #schedule #external-events .fc-event {
+    width: 200px;
+    padding: 5px;
+    cursor: move; }
+
+.masseur {
+  font-size: 0; }
+  .masseur li {
+    display: inline-block;
+    text-align: center;
+    font-size: 1rem;
+    width: 20%;
+    margin-bottom: 5%; }
+    .masseur li img {
+      border-radius: 50%;
+      border: 5px #fff solid;
+      margin-bottom: 10px;
+      -webkit-transition: all .2s linear;
+      -o-transition: all .2s linear;
+      transition: all .2s linear; }
+    .masseur li:hover img {
+      border: 5px blue solid;
+      -webkit-transition: all .2s linear;
+      -o-transition: all .2s linear;
+      transition: all .2s linear; }
+
+/*----- 進度條 -----*/
+.progress {
+  position: relative;
+  width: 400px;
+  border: 1px solid #ddd;
+  padding: 1px;
+  border-radius: 3px; }
+
+.bar {
+  background-color: #7cc7ee;
+  width: 0%;
+  height: 20px;
+  border-radius: 3px; }
+
+.percent {
+  position: absolute;
+  display: inline-block;
+  top: 3px;
+  left: 48%; }

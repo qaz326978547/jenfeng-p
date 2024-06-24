@@ -1,0 +1,1252 @@
+@charset "UTF-8";
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  text-align: left;
+  overflow: visible;
+  font-size: 15px;
+  color: #fff;
+  background-color: #111;
+  line-height: 1.6;
+  font-family: '微軟正黑體' , sans-serif , 'Raleway';
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.pace:after {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(81, 247, 249, 0.8);
+  z-index: 99999;
+  display: block;
+}
+
+.pace-inactive {
+  display: none;
+}
+
+.pace .pace-progress {
+  background: #51F7F9;
+  position: fixed;
+  z-index: 200000;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 3px;
+}
+
+/*共用屬性*/
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:active, a:hover {
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+input[type="text"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+/*泛用表格*/
+.t {
+  display: table;
+}
+.t > .t-row, .t ul {
+  display: table-row;
+}
+.t > .t-row > .t-cell, .t > .t-row li, .t ul > .t-cell, .t ul li {
+  display: table-cell;
+  vertical-align: middle;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+}
+
+/*定義區塊*/
+.container {
+  margin: auto;
+  position: relative;
+  z-index: 100;
+  width: 1200px;
+  max-width: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.row {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  position: relative;
+  min-height: 1px;
+  float: left;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.col-11 {
+  width: 91.66666667%;
+}
+
+.col-10 {
+  width: 83.33333333%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-8 {
+  width: 66.66666667%;
+}
+
+.col-7 {
+  width: 58.33333333%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-5 {
+  width: 41.66666667%;
+}
+
+.col-4 {
+  width: 33.33333333%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-2 {
+  width: 16.66666667%;
+}
+
+.col-1 {
+  width: 8.33333333%;
+}
+
+.pic {
+  position: relative;
+  font-size: 0;
+}
+.pic > span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 0;
+}
+.pic > span:before {
+  content: ' ';
+  display: inline-block;
+  height: 100%;
+  width: 0;
+  vertical-align: middle;
+}
+.pic > span > img, .pic > span > iframe {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+.pic > span > iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.cf:after,
+.row:after,
+dl:after {
+  display: block;
+  height: 0;
+  clear: both;
+  content: "";
+  visibility: hidden;
+}
+
+.bg-img {
+  background-position: 50% 50%;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+  width: 100%;
+  height: 0;
+}
+
+.editor {
+  word-break: break-all;
+}
+.editor i {
+  font-style: italic;
+}
+.editor em, .editor b, .editor strong {
+  font-weight: bold;
+}
+.editor img {
+  height: auto !important;
+}
+
+body, html {
+  background: #FFF;
+}
+
+/*登入頁面*/
+#login_form {
+  width: 600px;
+  max-width: 100%;
+  margin: 40px auto;
+  border: 2px #CCC solid;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.6) 0px 10px 30px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0px 10px 30px;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 10px 30px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 40px 20px;
+}
+#login_form img {
+  max-width: 250px;
+  margin: 30px auto;
+}
+#login_form div.t {
+  width: 450px;
+  margin: auto;
+}
+#login_form div.t li {
+  border-bottom: 1px #CCC dashed;
+}
+#login_form div.t li.left {
+  width: 120px;
+  text-align: right;
+  color: #666;
+}
+#login_form div.t li.left:before {
+  content: "\f023";
+  font-family: 'FontAwesome';
+  margin: 5px 10px;
+  font-size: 19px;
+  color: #999;
+}
+#login_form div.t li.left.user:before {
+  content: "\f007";
+}
+#login_form div.t li input {
+  width: 100%;
+  background: rgba(238, 238, 238, 0.3);
+  padding: 10px 5px;
+  text-align: left;
+  margin: 10px 20px;
+  border: 1px #CCC solid;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+#login_form div.button {
+  padding: 20px 0px;
+  text-align: center;
+}
+#login_form div.button input {
+  display: inline-block;
+  width: 100px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px #CCC solid;
+  cursor: pointer;
+  text-align: center;
+  padding: 5px 0px;
+  background: #4ab4fc;
+  color: #FFFFFF;
+}
+#login_form .copyright {
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+}
+
+/*左側選單*/
+#left {
+  float: left;
+  width: 200px;
+  min-height: 100%;
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzMzMzMzMyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzQ0NDQ0NCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #333333), color-stop(100%, #444444));
+  background: -moz-linear-gradient(left, #333333, #444444);
+  background: -webkit-linear-gradient(left, #333333, #444444);
+  background: linear-gradient(to right, #333333, #444444);
+  border-right: 3px #000 solid;
+  color: #FFFFFF;
+  font-size: 13px;
+  line-height: 1.6;
+}
+#left img {
+  width: 130px;
+  margin: 10px auto;
+  display: block;
+}
+#left div.page {
+  width: 150px;
+  margin: 5px auto;
+  padding: 10px 0px;
+}
+#left div.page div.title {
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwNWFjOSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzBmMzc2OSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #005ac9), color-stop(100%, #0f3769));
+  background: -moz-linear-gradient(#005ac9, #0f3769);
+  background: -webkit-linear-gradient(#005ac9, #0f3769);
+  background: linear-gradient(#005ac9, #0f3769);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 3px 5px;
+  border: 1px #999 solid;
+}
+#left div.page div.title:before {
+  display: inline-block;
+  font-family: 'FontAwesome';
+  content: "\f105";
+  font-size: 13px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+#left div.page div.title.user:before {
+  content: "\f007";
+}
+#left div.page div.inner {
+  background: #FFF;
+  color: #333;
+  border: 1px #999 solid;
+  border-top: none;
+  margin-top: -4px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+#left div.page div.inner a {
+  display: block;
+  text-align: left;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 5px 0px 5px 20px;
+}
+
+/*右側管理頁*/
+#main {
+  width: calc(100% - 200px);
+  padding: 10px 30px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  text-align: left;
+  float: left;
+  /*主管理區*/
+  /*main*/
+}
+#main main {
+  /*.block*/
+}
+#main main h3.title {
+  font-size: 2rem;
+  margin: 5px auto;
+}
+#main main h3.title:before {
+  display: inline-block;
+  font-family: 'FontAwesome';
+  color: #0c4c78;
+  content: "\f1b3";
+  margin-right: 10px;
+}
+#main main .notice {
+  border: 1px #CCC solid;
+  background: #fff2ad;
+  color: #e54e0c;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin: 5px auto;
+  padding: 1px 10px;
+  display: none;
+}
+#main main .notice.show {
+  display: block;
+}
+#main main .notice:before {
+  content: "\f05a";
+  font-family: 'FontAwesome';
+  display: inline-block;
+  margin: 0 10px;
+}
+#main main .block {
+  border: 2px #CCC solid;
+  background: #f9f9f9;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 10px auto;
+  /*div.t*/
+  /*產品架用 列表上方快速新增*/
+  /*列表*/
+  /*.list-form*/
+  /*.form*/
+  /*次選單*/
+  /*.subList*/
+}
+#main main .block.path {
+  background: linear-gradient(#dddddd, #dddddd, #dddddd, #ffffff);
+}
+#main main .block.path:before {
+  display: inline-block;
+  content: "\f013";
+  font-family: 'FontAwesome';
+  margin: 0 5px;
+}
+#main main .block div.t {
+  /*ul*/
+}
+#main main .block div.t ul {
+  width: 100%;
+  /*li*/
+}
+#main main .block div.t ul li {
+  width: 100%;
+  padding: 5px;
+  height: 36px;
+  line-height: 36px;
+}
+#main main .block .quick_form {
+  width: 98%;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px #aaa solid;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #FFFFFF;
+}
+#main main .block .list_form {
+  /*.list-form*/
+}
+#main main .block .list_form div.t {
+  width: 98%;
+  border: 1px #aaa solid;
+  margin: 20px auto;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #FFFFFF;
+}
+#main main .block .list_form div.t ul li {
+  width: auto;
+  border-bottom: 1px #999 solid;
+}
+#main main .block .list_form div.t ul li.del {
+  min-width: 50px;
+}
+#main main .block .list_form div.t ul li img {
+  min-width: 150px;
+  height: auto;
+  max-width: 300px;
+  max-height: none;
+}
+#main main .block .list_form div.t ul.head li {
+  color: #000000;
+  background: linear-gradient(#dddddd, #dddddd, #dddddd, #cccccc);
+}
+#main main .block .list_form div.t ul.head li:first-child {
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+#main main .block .list_form div.t ul.head li:last-child {
+  -moz-border-radius-topright: 10px;
+  -webkit-border-top-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#main main .block .list_form div.t ul:nth-child(even) li {
+  background: #eee;
+}
+#main main .block .list_form div.t ul:last-child li:first-child {
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+#main main .block .list_form div.t ul:last-child li:last-child {
+  -moz-border-radius-bottomright: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+#main main .block .list_form div.page {
+  text-align: center;
+  padding: 5px;
+  font-size: 15px;
+  color: #333;
+}
+#main main .block .list_form div.page a {
+  display: inline-block;
+  margin: 0px 2px;
+  text-align: center;
+  color: #666;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  border: 1px #CCC solid;
+  background: #FFF;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+#main main .block .list_form div.page a:hover {
+  color: #FFF;
+  background: #1f6b9f;
+}
+#main main .block .list_form div.page a.selected {
+  background: #003b63;
+  color: #FFF;
+}
+#main main .block .list_form div.page p {
+  padding: 10px 0px;
+}
+#main main .block .list_form div.page p span {
+  color: blue;
+}
+#main main .block.tab-inner {
+  margin-top: 0;
+  display: none;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+}
+#main main .block.tab-inner div.t {
+  width: 100%;
+}
+#main main .block.form, #main main .block .form {
+  /*li*/
+}
+#main main .block.form > table, #main main .block .form > table {
+  width: 100%;
+}
+#main main .block.form li, #main main .block.form > table, #main main .block .form li, #main main .block .form > table {
+  line-height: 40px;
+}
+#main main .block.form li label, #main main .block.form li th.form_name, #main main .block.form > table label, #main main .block.form > table th.form_name, #main main .block .form li label, #main main .block .form li th.form_name, #main main .block .form > table label, #main main .block .form > table th.form_name {
+  border-right: 1px #AAA solid;
+  width: 120px;
+  text-align: right;
+  padding: 0px 10px 0px 0px;
+  float: left;
+}
+#main main .block.form li label.line, #main main .block.form li label.notice, #main main .block.form li th.form_name.line, #main main .block.form li th.form_name.notice, #main main .block.form > table label.line, #main main .block.form > table label.notice, #main main .block.form > table th.form_name.line, #main main .block.form > table th.form_name.notice, #main main .block .form li label.line, #main main .block .form li label.notice, #main main .block .form li th.form_name.line, #main main .block .form li th.form_name.notice, #main main .block .form > table label.line, #main main .block .form > table label.notice, #main main .block .form > table th.form_name.line, #main main .block .form > table th.form_name.notice {
+  width: 100%;
+  text-align: left;
+  border-right: none;
+  background: linear-gradient(#3a8bc2, #3a8bc2, #3a8bc2, #2472a8);
+  color: #FFFFFF;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  padding-left: 30px;
+}
+#main main .block.form li label.line:before, #main main .block.form li label.notice:before, #main main .block.form li th.form_name.line:before, #main main .block.form li th.form_name.notice:before, #main main .block.form > table label.line:before, #main main .block.form > table label.notice:before, #main main .block.form > table th.form_name.line:before, #main main .block.form > table th.form_name.notice:before, #main main .block .form li label.line:before, #main main .block .form li label.notice:before, #main main .block .form li th.form_name.line:before, #main main .block .form li th.form_name.notice:before, #main main .block .form > table label.line:before, #main main .block .form > table label.notice:before, #main main .block .form > table th.form_name.line:before, #main main .block .form > table th.form_name.notice:before {
+  content: "\f0da";
+  font-family: 'FontAwesome';
+  display: inline-block;
+  margin: 0 10px;
+}
+#main main .block.form li label.notice, #main main .block.form li th.form_name.notice, #main main .block.form > table label.notice, #main main .block.form > table th.form_name.notice, #main main .block .form li label.notice, #main main .block .form li th.form_name.notice, #main main .block .form > table label.notice, #main main .block .form > table th.form_name.notice {
+  display: block;
+  border: 1px #CCC solid;
+  background: #fff2ad;
+  color: #e54e0c;
+  margin: 5px auto;
+  padding: 1px 10px;
+}
+#main main .block.form li label.notice:before, #main main .block.form li th.form_name.notice:before, #main main .block.form > table label.notice:before, #main main .block.form > table th.form_name.notice:before, #main main .block .form li label.notice:before, #main main .block .form li th.form_name.notice:before, #main main .block .form > table label.notice:before, #main main .block .form > table th.form_name.notice:before {
+  content: "\f05a";
+}
+#main main .block.form li > div, #main main .block.form li th.form_input, #main main .block.form > table > div, #main main .block.form > table th.form_input, #main main .block .form li > div, #main main .block .form li th.form_input, #main main .block .form > table > div, #main main .block .form > table th.form_input {
+  width: calc(100% - 120px);
+  float: left;
+  padding-left: 10px;
+  min-height: 40px;
+}
+#main main .block.form li > div input, #main main .block.form li > div select, #main main .block.form li th.form_input input, #main main .block.form li th.form_input select, #main main .block.form > table > div input, #main main .block.form > table > div select, #main main .block.form > table th.form_input input, #main main .block.form > table th.form_input select, #main main .block .form li > div input, #main main .block .form li > div select, #main main .block .form li th.form_input input, #main main .block .form li th.form_input select, #main main .block .form > table > div input, #main main .block .form > table > div select, #main main .block .form > table th.form_input input, #main main .block .form > table th.form_input select {
+  width: auto;
+  min-width: 150px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  height: 30px;
+  line-height: 30px;
+  margin: 3px 5px;
+  border: 1px #999 solid;
+  padding: 0px 5px;
+}
+#main main .block.form li > div input[type=radio], #main main .block.form li > div input[type=checkbox], #main main .block.form li > div select[type=radio], #main main .block.form li > div select[type=checkbox], #main main .block.form li th.form_input input[type=radio], #main main .block.form li th.form_input input[type=checkbox], #main main .block.form li th.form_input select[type=radio], #main main .block.form li th.form_input select[type=checkbox], #main main .block.form > table > div input[type=radio], #main main .block.form > table > div input[type=checkbox], #main main .block.form > table > div select[type=radio], #main main .block.form > table > div select[type=checkbox], #main main .block.form > table th.form_input input[type=radio], #main main .block.form > table th.form_input input[type=checkbox], #main main .block.form > table th.form_input select[type=radio], #main main .block.form > table th.form_input select[type=checkbox], #main main .block .form li > div input[type=radio], #main main .block .form li > div input[type=checkbox], #main main .block .form li > div select[type=radio], #main main .block .form li > div select[type=checkbox], #main main .block .form li th.form_input input[type=radio], #main main .block .form li th.form_input input[type=checkbox], #main main .block .form li th.form_input select[type=radio], #main main .block .form li th.form_input select[type=checkbox], #main main .block .form > table > div input[type=radio], #main main .block .form > table > div input[type=checkbox], #main main .block .form > table > div select[type=radio], #main main .block .form > table > div select[type=checkbox], #main main .block .form > table th.form_input input[type=radio], #main main .block .form > table th.form_input input[type=checkbox], #main main .block .form > table th.form_input select[type=radio], #main main .block .form > table th.form_input select[type=checkbox] {
+  min-width: 0;
+  height: auto;
+}
+#main main .block.form li > div input[name=zip], #main main .block.form li > div select[name=zip], #main main .block.form li th.form_input input[name=zip], #main main .block.form li th.form_input select[name=zip], #main main .block.form > table > div input[name=zip], #main main .block.form > table > div select[name=zip], #main main .block.form > table th.form_input input[name=zip], #main main .block.form > table th.form_input select[name=zip], #main main .block .form li > div input[name=zip], #main main .block .form li > div select[name=zip], #main main .block .form li th.form_input input[name=zip], #main main .block .form li th.form_input select[name=zip], #main main .block .form > table > div input[name=zip], #main main .block .form > table > div select[name=zip], #main main .block .form > table th.form_input input[name=zip], #main main .block .form > table th.form_input select[name=zip] {
+  width: 50px;
+  min-width: 0;
+}
+#main main .block.form li > div input.tel, #main main .block.form li > div input.cel, #main main .block.form li > div input.link, #main main .block.form li > div input.address, #main main .block.form li > div input.mail, #main main .block.form li > div select.tel, #main main .block.form li > div select.cel, #main main .block.form li > div select.link, #main main .block.form li > div select.address, #main main .block.form li > div select.mail, #main main .block.form li th.form_input input.tel, #main main .block.form li th.form_input input.cel, #main main .block.form li th.form_input input.link, #main main .block.form li th.form_input input.address, #main main .block.form li th.form_input input.mail, #main main .block.form li th.form_input select.tel, #main main .block.form li th.form_input select.cel, #main main .block.form li th.form_input select.link, #main main .block.form li th.form_input select.address, #main main .block.form li th.form_input select.mail, #main main .block.form > table > div input.tel, #main main .block.form > table > div input.cel, #main main .block.form > table > div input.link, #main main .block.form > table > div input.address, #main main .block.form > table > div input.mail, #main main .block.form > table > div select.tel, #main main .block.form > table > div select.cel, #main main .block.form > table > div select.link, #main main .block.form > table > div select.address, #main main .block.form > table > div select.mail, #main main .block.form > table th.form_input input.tel, #main main .block.form > table th.form_input input.cel, #main main .block.form > table th.form_input input.link, #main main .block.form > table th.form_input input.address, #main main .block.form > table th.form_input input.mail, #main main .block.form > table th.form_input select.tel, #main main .block.form > table th.form_input select.cel, #main main .block.form > table th.form_input select.link, #main main .block.form > table th.form_input select.address, #main main .block.form > table th.form_input select.mail, #main main .block .form li > div input.tel, #main main .block .form li > div input.cel, #main main .block .form li > div input.link, #main main .block .form li > div input.address, #main main .block .form li > div input.mail, #main main .block .form li > div select.tel, #main main .block .form li > div select.cel, #main main .block .form li > div select.link, #main main .block .form li > div select.address, #main main .block .form li > div select.mail, #main main .block .form li th.form_input input.tel, #main main .block .form li th.form_input input.cel, #main main .block .form li th.form_input input.link, #main main .block .form li th.form_input input.address, #main main .block .form li th.form_input input.mail, #main main .block .form li th.form_input select.tel, #main main .block .form li th.form_input select.cel, #main main .block .form li th.form_input select.link, #main main .block .form li th.form_input select.address, #main main .block .form li th.form_input select.mail, #main main .block .form > table > div input.tel, #main main .block .form > table > div input.cel, #main main .block .form > table > div input.link, #main main .block .form > table > div input.address, #main main .block .form > table > div input.mail, #main main .block .form > table > div select.tel, #main main .block .form > table > div select.cel, #main main .block .form > table > div select.link, #main main .block .form > table > div select.address, #main main .block .form > table > div select.mail, #main main .block .form > table th.form_input input.tel, #main main .block .form > table th.form_input input.cel, #main main .block .form > table th.form_input input.link, #main main .block .form > table th.form_input input.address, #main main .block .form > table th.form_input input.mail, #main main .block .form > table th.form_input select.tel, #main main .block .form > table th.form_input select.cel, #main main .block .form > table th.form_input select.link, #main main .block .form > table th.form_input select.address, #main main .block .form > table th.form_input select.mail {
+  width: 90%;
+}
+#main main .block.form li > div textarea, #main main .block.form li th.form_input textarea, #main main .block.form > table > div textarea, #main main .block.form > table th.form_input textarea, #main main .block .form li > div textarea, #main main .block .form li th.form_input textarea, #main main .block .form > table > div textarea, #main main .block .form > table th.form_input textarea {
+  width: 100%;
+  height: 200px;
+}
+#main main .block.form li > div.address select, #main main .block.form li > div.address input, #main main .block.form li th.form_input.address select, #main main .block.form li th.form_input.address input, #main main .block.form > table > div.address select, #main main .block.form > table > div.address input, #main main .block.form > table th.form_input.address select, #main main .block.form > table th.form_input.address input, #main main .block .form li > div.address select, #main main .block .form li > div.address input, #main main .block .form li th.form_input.address select, #main main .block .form li th.form_input.address input, #main main .block .form > table > div.address select, #main main .block .form > table > div.address input, #main main .block .form > table th.form_input.address select, #main main .block .form > table th.form_input.address input {
+  width: auto;
+}
+#main main .block #pcList .subList .item {
+  text-align: center;
+}
+#main main .block .subList {
+  /*item1,2*/
+}
+#main main .block .subList .checkboxs {
+  background: linear-gradient(#ffffff, #ffffff, #ffffff, #cccccc);
+  border: 2px #999 solid;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 150px;
+  display: inline-block;
+  margin: 3px;
+  text-align: center;
+  padding: 5px 10px;
+  cursor: pointer;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#main main .block .subList .checkboxs.active {
+  background: linear-gradient(#477dce, #477dce, #477dce, #285dad);
+  color: #FFF;
+}
+#main main .block .subList .checkboxs.active:before {
+  content: "\f046";
+  font-family: 'FontAwesome';
+  display: inline-block;
+  margin-right: 5px;
+}
+#main main .block .subList .item, #main main .block .subList .item2, #main main .block .subList .item3 {
+  min-width: 150px;
+  height: auto;
+  margin: 5px;
+  display: inline-block;
+  border: 5px #477dce solid;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: left;
+}
+#main main .block .subList .item .del, #main main .block .subList .item .open, #main main .block .subList .item2 .del, #main main .block .subList .item2 .open, #main main .block .subList .item3 .del, #main main .block .subList .item3 .open {
+  display: none;
+  position: absolute;
+  right: 1px;
+  top: 3px;
+  color: #c21c1c;
+  cursor: pointer;
+  z-index: 999;
+  font-size: 30px;
+  line-height: 30px;
+  text-shadow: #FFF 0px 0px 5px,#FFF 0px 0px 5px;
+}
+#main main .block .subList .item .del:before, #main main .block .subList .item .open:before, #main main .block .subList .item2 .del:before, #main main .block .subList .item2 .open:before, #main main .block .subList .item3 .del:before, #main main .block .subList .item3 .open:before {
+  content: "\f00d";
+  font-family: 'FontAwesome';
+}
+#main main .block .subList .item .open, #main main .block .subList .item2 .open, #main main .block .subList .item3 .open {
+  right: 35px;
+  color: #477dce;
+  font-size: 25px;
+}
+#main main .block .subList .item .open:before, #main main .block .subList .item2 .open:before, #main main .block .subList .item3 .open:before {
+  content: "\f002";
+}
+#main main .block .subList .item .pic, #main main .block .subList .item2 .pic, #main main .block .subList .item3 .pic {
+  width: 100%;
+  height: 125px;
+  background-position: 50% 50%;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#main main .block .subList .item input, #main main .block .subList .item2 input, #main main .block .subList .item3 input {
+  width: 100%;
+  margin: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+#main main .block .subList .item:hover, #main main .block .subList .item2:hover, #main main .block .subList .item3:hover {
+  border-color: #c21c1c;
+}
+#main main .block .subList .item:hover .del, #main main .block .subList .item:hover .open, #main main .block .subList .item2:hover .del, #main main .block .subList .item2:hover .open, #main main .block .subList .item3:hover .del, #main main .block .subList .item3:hover .open {
+  display: block;
+}
+#main main .block .subList .item.link-item, #main main .block .subList .item2.link-item, #main main .block .subList .item3.link-item {
+  width: 255px;
+}
+#main main .block .subList .item2 {
+  background: linear-gradient(#3a8bc2, #3a8bc2, #3a8bc2, #2472a8);
+  color: #FFF;
+  padding-left: 30px;
+}
+#main main .block .subList .item2 .del {
+  display: block;
+  left: 5px;
+  right: auto;
+}
+#main main .block .subList .item2 input {
+  width: 40px;
+  min-width: 40px;
+}
+#main main .block .subList .item3 .name {
+  padding: 3px 5px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+#main main .block .subList .item3 .input {
+  padding: 5px;
+}
+#main main .block .subList .item3 .input span, #main main .block .subList .item3 .input input {
+  display: block;
+  float: left;
+}
+#main main .block .subList .item3 .input span {
+  width: 50px;
+}
+#main main .block .subList .item3 .input input {
+  width: calc( 100% - 50px - 10px );
+  margin-top: 3px;
+}
+#main main .block .subList .form-item {
+  border: 2px #EEE solid;
+  padding: 10px;
+  background: #FFF;
+}
+#main main .block .subList .cstable {
+  width: auto;
+  border: 2px #3a8bc2 solid;
+  table-layout: collapse;
+  background: #FFF;
+}
+#main main .block .subList .cstable td {
+  min-width: 150px;
+  text-align: center;
+  border: 1px #3a8bc2 solid;
+}
+#main main .block .subList .cstable td.c-row, #main main .block .subList .cstable td.s-row {
+  background: linear-gradient(#136196, #136196, #136196, #3a8bc2);
+  color: #FFF;
+}
+#main main .block .subList .cstable td.empty {
+  background: #EEE;
+}
+#main main div.tabs {
+  margin: 0;
+}
+#main main div.tabs ul li {
+  width: 120px;
+  text-align: center;
+  background: linear-gradient(#ffffff, #ffffff, #ffffff, #dddddd);
+  height: 40px;
+  line-height: 40px;
+  border: 1px #CCC solid;
+  float: left;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-right: 1px;
+  cursor: pointer;
+}
+#main main div.tabs ul li.active, #main main div.tabs ul li:hover {
+  color: #FFFFFF;
+  background: linear-gradient(#3a8bc2, #3a8bc2, #3a8bc2, #2472a8);
+}
+
+.order {
+  /*.shop_list*/
+}
+.order ul.head {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: #FFFFFF;
+  background: linear-gradient(#3a8bc2, #3a8bc2, #3a8bc2, #2472a8);
+}
+.order ul.head li {
+  text-align: center;
+}
+.order ul.data li {
+  text-align: center;
+}
+.order .shop_list {
+  width: 100% !important;
+  /*ul*/
+}
+.order .shop_list ul {
+  color: #333333;
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: center;
+  /*> li*/
+}
+.order .shop_list ul.head {
+  background: #F0EFE8;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+.order .shop_list ul.head > li {
+  border-bottom: none;
+  padding: 0;
+}
+.order .shop_list ul > li {
+  border-bottom: 1px #ccc solid;
+  padding: 15px 0px !important;
+  width: auto !important;
+}
+.order .shop_list ul > li.no {
+  width: 50px;
+}
+.order .shop_list ul > li.list_item {
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: left;
+}
+.order .shop_list ul > li.list_item .img-row {
+  width: 140px !important;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20px;
+  float: none !important;
+}
+.order .shop_list ul > li.list_item .img-row .pic {
+  padding-bottom: 90%;
+  height: 0;
+  margin: auto;
+}
+.order .shop_list ul > li.list_item .img-row .pic span {
+  left: 0;
+  top: 0;
+}
+.order .shop_list ul > li.list_item .detail {
+  display: inline-block;
+  vertical-align: middle;
+  color: #000000;
+  width: auto !important;
+  float: none !important;
+}
+.order .shop_list ul > li.list_count, .order .shop_list ul > li.price, .order .shop_list ul > li.sum {
+  width: 160px;
+}
+.order .shop_list ul > li.list_count ul.count {
+  display: block;
+  width: 100%;
+}
+.order .shop_list ul > li.list_count ul.count li {
+  display: block;
+  float: left;
+  margin: auto;
+  width: 58%;
+  padding: 0;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #FFF;
+  font-size: 15px;
+  border: none;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.order .shop_list ul > li.list_count ul.count li:hover {
+  background: #040B8C;
+}
+.order .shop_list ul > li.list_count ul.count li.down, .order .shop_list ul > li.list_count ul.count li.up {
+  width: 20%;
+  margin: 0;
+  cursor: pointer;
+  background: #24A6FB;
+  -moz-border-radius-topright: 0px;
+  -webkit-border-top-right-radius: 0px;
+  border-top-right-radius: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.order .shop_list ul > li.list_count ul.count li.up {
+  -moz-border-radius-topleft: 0px;
+  -webkit-border-top-left-radius: 0px;
+  border-top-left-radius: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.order .shop_list ul > li.list_count ul.count li input {
+  width: 100%;
+  border-top: 1px #DDDDDD solid;
+  border-bottom: 1px #DDDDDD solid;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.order .shop_list ul > li.sum {
+  color: #FF391E;
+}
+.order .shop_list ul > li.del {
+  width: 80px;
+}
+.order .shop_list ul > li.del div {
+  cursor: pointer;
+}
+.order .shop_list ul > li.del div:before {
+  font-size: 35px;
+  display: inline-block;
+  content: "\f00d";
+  font-family: 'FontAwesome';
+}
+.order #total_price {
+  color: #FF391E;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/*元件*/
+a.button, input.button {
+  display: inline-block;
+  width: 150px;
+  text-align: center;
+  color: #fff;
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzI0N2FiNCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzEzNjE5NiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #247ab4), color-stop(100%, #136196));
+  background: -moz-linear-gradient(#247ab4, #136196);
+  background: -webkit-linear-gradient(#247ab4, #136196);
+  background: linear-gradient(#247ab4, #136196);
+  border: 1px #aaa solid;
+  line-height: 25px;
+  height: 32px;
+  margin: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  box-shadow: inset -5px -5px 5px rgba(0, 0, 0, 0.3);
+  -moz-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  cursor: pointer;
+}
+a.button:hover, input.button:hover {
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+a.button.file:before, input.button.file:before {
+  content: "\f1c6";
+  font-family: 'FontAwesome';
+  display: inline-block;
+  margin-right: 10px;
+}
+
+input.button {
+  height: 35px;
+}
+
+div.button {
+  text-align: center;
+}
+
+a.upd, a.del, a.user, a.user_disable, a.upd_pw, a.search, a.send_mail, a.fa-sitemap, a.bank {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0px 5px 0px 0px;
+  color: #095588;
+  font-size: 21px;
+  width: 50px;
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMzMuMzMzMzMzMzMzMyUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9IjY2LjY2NjY2NjY2NjclIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjY2NjY2NjIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(33.3333333333%, #ffffff), color-stop(66.6666666667%, #ffffff), color-stop(100%, #cccccc));
+  background: -moz-linear-gradient(#ffffff, #ffffff, #ffffff, #cccccc);
+  background: -webkit-linear-gradient(#ffffff, #ffffff, #ffffff, #cccccc);
+  background: linear-gradient(#ffffff, #ffffff, #ffffff, #cccccc);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 2px #CCC solid;
+  text-align: center;
+}
+a.upd:before, a.del:before, a.user:before, a.user_disable:before, a.upd_pw:before, a.search:before, a.send_mail:before, a.fa-sitemap:before, a.bank:before {
+  content: "\f040";
+  font-family: 'FontAwesome';
+}
+a.upd:hover, a.del:hover, a.user:hover, a.user_disable:hover, a.upd_pw:hover, a.search:hover, a.send_mail:hover, a.fa-sitemap:hover, a.bank:hover {
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2NjY2NjYyIvPjxzdG9wIG9mZnNldD0iMzMuMzMzMzMzMzMzMyUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9IjY2LjY2NjY2NjY2NjclIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cccccc), color-stop(33.3333333333%, #ffffff), color-stop(66.6666666667%, #ffffff), color-stop(100%, #ffffff));
+  background: -moz-linear-gradient(#cccccc, #ffffff, #ffffff, #ffffff);
+  background: -webkit-linear-gradient(#cccccc, #ffffff, #ffffff, #ffffff);
+  background: linear-gradient(#cccccc, #ffffff, #ffffff, #ffffff);
+}
+
+a.del {
+  color: #c21c1c;
+}
+a.del:before {
+  content: "\f00d";
+}
+
+a.user {
+  color: #247ab4;
+}
+a.user:before {
+  content: "\f007";
+}
+
+a.user_disable {
+  color: #c21c1c;
+}
+a.user_disable:before {
+  content: "\f235";
+}
+
+a.upd_pw {
+  color: #247ab4;
+}
+a.upd_pw:before {
+  content: "\f084";
+}
+
+a.search {
+  color: #247ab4;
+}
+a.search:before {
+  content: "\f002";
+}
+
+a.send_mail {
+  color: #247ab4;
+}
+a.send_mail:before {
+  content: "\f1d8";
+}
+
+a.fa-sitemap {
+  color: #247ab4;
+}
+a.fa-sitemap:before {
+  content: "\f0e8";
+}
+
+a.bank {
+  color: #247ab4;
+}
+a.bank:before {
+  content: "\f0d6";
+}
+
+.login-box {
+  padding: 2rem 5%;
+}
+.login-box .login-link {
+  color: #333;
+  margin-left: 15px;
+}
+.login-box .login-link .fa {
+  margin-left: 5px;
+}
+.login-box .login-link:hover {
+  color: #51F7F9;
+}
+.login-box .link-row {
+  margin-top: 2rem;
+}
+
+.login-form {
+  color: #666;
+}
+.login-form dt {
+  padding: 12px 0;
+  line-height: 2.2rem;
+  position: relative;
+}
+.login-form dt #account_check {
+  position: absolute;
+  right: 0px;
+  top: 12px;
+}
+.login-form .txt {
+  float: left;
+  width: 17%;
+}
+.login-form .form-cell {
+  background-color: #fff;
+  padding: 0 10px;
+  height: 2.2rem;
+  line-height: 2.2rem;
+  font-family: "微軟正黑體";
+  width: 100%;
+  border: 1px #333 solid;
+}
+.login-form .form-cell:focus {
+  outline: 0;
+}
+.login-form .form-r {
+  float: right;
+  width: 83%;
+  display: flex;
+}
+.login-form .form-r .cell {
+  margin-right: 5px;
+}
+.login-form .form-cell {
+  float: left;
+  width: 83%;
+}
+.login-form .form-cell-half {
+  float: left;
+  width: 50%;
+  margin-right: 5px;
+}
+
+.searchList {
+  width: 98%;
+  border: 1px #aaa solid;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+.searchList .p-unit > div {
+  width: 95%;
+  background: #FFF;
+  margin: 10px auto;
+  border: 2px #ccc solid;
+  border-radius: 5px;
+  padding: 5px 0;
+  cursor: pointer;
+}
+.searchList .p-unit > div .checkbox {
+  text-align: right;
+  padding: 3px 5px;
+  font-size: 1.2rem;
+  line-height: 2;
+}
+.searchList .p-unit > div .pic {
+  width: 95%;
+  padding-bottom: 80%;
+  margin: auto;
+}
+.searchList .p-unit > div .text {
+  width: 90%;
+  margin: 5px auto;
+  font-size: 0.8rem;
+  line-height: 20px;
+  height: 100px;
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=admin.css.map */

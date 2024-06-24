@@ -1,0 +1,196 @@
+#faq {
+	font-size: 1.875rem;
+	@include media-breakpoint-down(md) {
+		font-size: 1.5rem;
+	}
+	@include media-breakpoint-down(xs) {
+		font-size: 1.25rem;
+	}
+	.qa-item{
+		padding-left: 60px;
+		margin-bottom: 80px;
+		@include media-breakpoint-down(xs) {
+			padding-left: 40px;
+			margin-bottom: 60px;
+		}
+		&:hover{
+			cursor: pointer;
+		}
+		&.active{
+			.icon{
+				transform: rotate(180deg);
+			}
+		}
+		&:nth-child(even){
+			.number-cube{
+				background-image: url(../_img/index/qa-icon-red.png);
+			}
+			.icon{
+				color: $mc2;
+			}
+			&:hover{
+				.title{
+					color: $mc2;
+				}
+			}
+			&.active{
+				.title{
+					color: $mc2;
+				}
+			}
+		}
+		&:nth-child(odd){
+			.number-cube{
+				background-image: url(../_img/index/qa-icon-blue.png);
+			}
+			.icon{
+				color: $mc1;
+			}
+			&:hover{
+				.title{
+					color: $mc1;
+				}
+			}
+			&.active{
+				.title{
+					color: $mc1;
+				}
+			}
+		}
+	}
+	.q-content{
+		border: 2px #000 solid;
+		padding: 30px 90px 30px 85px;
+		border-radius: 0 50px 50px 0;
+		position: relative;
+		@include media-breakpoint-down(md) {
+			padding: 30px 70px 30px 65px;
+		}
+		@include media-breakpoint-down(xs) {
+			padding: 20px 65px 20px 40px;
+		}
+	}
+    .number-cube{
+		position: absolute;
+		top: -40px;
+		left: -60px;
+		width: 125px;
+		height: 117px;
+		background-size: contain;
+		@include media-breakpoint-down(xs) {
+			width: 80px;
+			height: 75px;
+			left: -40px;
+		}
+		.number{
+			color: #FFF;
+			font-size: 65px;
+			font-family: 'Baloo Bhaijaan 2';
+			font-weight: 700;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 3px;
+			@include media-breakpoint-down(xs) {
+				font-size: 40px;
+			}
+		}
+		
+	}
+	.title{
+		font-weight: 600;
+	}
+	.icon{
+		position: absolute;
+		right: 30px;
+		font-size: 50px;
+		color: $mc2;
+		top: calc(50% - 40px);
+		@include media-breakpoint-down(xs) {
+			font-size: 40px;
+		}
+	}
+	.a-content{
+		padding: 25px 90px 25px 85px;
+		display: none;
+		@include media-breakpoint-down(md) {
+			padding: 25px 70px 25px 65px;
+		}
+		@include media-breakpoint-down(xs) {
+			padding: 20px 65px 20px 40px;
+		}
+	}
+}
+
+
+#register{
+	background-color: #F4F4F4;
+	margin-top: 80px;
+	font-size: 1.25rem;
+	hr{
+		margin: 30px 0;
+	}
+	.icon{
+		font-size: 57px;
+		text-align: center;
+		color: $mc2;
+		margin-top: -80px;
+	}
+	.title{
+		font-size: 50px;
+		font-weight: 600;
+		@include media-breakpoint-down(xs) {
+			font-size: 30px;
+		}
+	}
+	.big-title{
+		font-size: 1.5rem;
+		font-weight: 600;
+		span{
+			color: $mc2;
+		}
+	}
+	.form-check{
+		input{
+			margin-top: 12px;
+		}
+	}
+	.form-group{
+		span{
+			color: $mc2;
+		}
+	}
+	.join-title{
+		color: $mc1;
+		font-weight: 600;
+	}
+	.add-btn{
+		border-radius: 4px;
+		background-color: #4D4D4D;
+		color: #FFF;
+		text-align: center;
+		padding: 8px;
+		width: 200px;
+		margin-top: 10px;
+		&:hover{
+			cursor: pointer;
+			background-color: $mc1;
+		}
+	}
+	.send-btn{
+		border-radius: 4px;
+		background-color: $mc1;
+		color: #FFF;
+		text-align: center;
+		padding: 8px;
+		width: 200px;
+		margin-top: 10px;
+		&:hover{
+			cursor: pointer;
+			background-color: $mc2;
+		}
+
+	}
+}
+
+
