@@ -1,20 +1,21 @@
 # 使用官方 PHP 8.1 镜像作为基础镜像
 FROM php:8.1-fpm
 
-# 安装系统依赖和 PHP 扩展
-RUN apt-get update && \
-    apt-get install -y \
+# 安装系统依赖
+RUN apt-get update \
+    && apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libpng-dev \
-        zlib1g-dev \  # 新增：安装 zlib1g-dev 作为 zip 扩展的依赖
+        zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg && \
-    docker-php-ext-install -j$(nproc) gd \
+# 配置并安装 PHP 扩展
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) gd \
         pdo \
         pdo_mysql \
-        zip   # 新增：安装 zip 扩展
+        zip
 
 # 安装 Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
